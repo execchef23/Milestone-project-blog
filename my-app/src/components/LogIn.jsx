@@ -5,11 +5,11 @@ import NavBar from './NavBar';
 const LogIn = () => {
 
     return(
-        
+
         <div>
             <NavBar />
             <div className="Form">
-                <h2>LogIn</h2>
+                <h2>Log In</h2>
                 <form>
                     <label>Username: </label>
                     <input 
