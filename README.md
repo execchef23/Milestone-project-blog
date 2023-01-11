@@ -1,3 +1,8 @@
-# Milestone-Project-3
+# Milestone-Project-3 (Blog Central)
 
-Philip Added to his Branch
+
+Backend - Node, Express (node), 
+
+Frontend - React 
+
+Database - Mongo with Mongoose
