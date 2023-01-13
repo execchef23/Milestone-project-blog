@@ -27,7 +27,7 @@ const Home = () => {
             <input
               type="password"
               value={password}
-              onchange={(e) => SetPassword(e.target.value)}
+              onChange={(e) => SetPassword(e.target.value)}
             />
           </label>
           <input type="submit" />
