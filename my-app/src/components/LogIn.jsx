@@ -2,22 +2,15 @@
 // import Form from 'react-bootstrap/Form';
 import NavBar from './NavBar';
 
-const SignUp = () => {
-
-    
+const LogIn = () => {
 
     return(
+
         <div>
             <NavBar />
             <div className="Form">
-                <h2>Sign Up</h2>
+                <h2>Log In</h2>
                 <form>
-                    <label>Email Address: </label>
-                    <input 
-                        id="email"
-                        name="email"
-                        required
-                    />
                     <label>Username: </label>
                     <input 
                         id="username"
@@ -31,9 +24,9 @@ const SignUp = () => {
                         required
                     />
                     <input 
-                        onClick={SignUp}
+                        onClick={LogIn}
                         className="btn"
-                        value="Sign Up"
+                        value="Log In"
                     />
                 </form>
                 {/* <Form>
@@ -61,4 +54,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default LogIn;
