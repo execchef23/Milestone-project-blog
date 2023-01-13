@@ -1,6 +1,7 @@
-const db = require("../models");
-const mongoose = require("mongoose");
+const db = require("./models");
 require("dotenv").config();
+const mongoose = require("mongoose");
+
 
 //MONGOOSE
 const MONGO_URI = process.env.MONGO_URI;
@@ -14,13 +15,13 @@ mongoose.connect(
     console.log(`connected to mongo: ${MONGO_URI}`);
   }
 );
+console.log(`connected to mongo: ${MONGO_URI}`)
 
-db.Game.create([
+db.Blogs.create([
   {
-    Title: "Monopoly",
-    pic: "/Monopoly.jpg",
-    genre: "Board game",
-    description: ".",
+    title: "Kittens",
+    image: "https://placekitten.com/200/300",
+    description: "loren ipston jnaifjbna cojansfcc",
   }
 ])
   .then(() => {
