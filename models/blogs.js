@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
 const blogSchema = new mongoose.Schema({
-  bloger: { type: String, required: true },
-  pic: { data: Buffer, type: String },
-  blogtype: { type: String  },
-  description: { type: String, required: true }
+  title: { type: String, required: true },
+  image: { type: String },
+  description: { type: String  }
 });
 
-module.exports = mongoose.model("Blog", blogSchema);
+module.exports = mongoose.model("Blogs", blogSchema);
