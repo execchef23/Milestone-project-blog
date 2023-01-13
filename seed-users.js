@@ -9,11 +9,10 @@ mongoose.connect(MONGO_URI, {
   useUnifiedTopology: true,
 });
 
-db.Blogs.create([
+db.User.create([
   {
-    title: "Kittens",
-    image: "https://placekitten.com/200/300",
-    description: "loren ipston jnaifjbna cojansfcc",
+    username: "Kittens",
+    password: "https://placekitten.com/200/300",
   },
 ])
   .then(() => {
