@@ -7,4 +7,4 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 module.exports.Blogs = require("./blogs");
-module.exports.User = require("./login");
+module.exports.User = require("./user");

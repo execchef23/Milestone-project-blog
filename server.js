@@ -20,22 +20,18 @@ mongoose.connect(
     console.log(`connected to mongo: ${MONGO_URI}`);
   }
 );
-
-// Handle GET requests to /api route
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
-});
-
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // Express Settings
 
 app.use(express.json());
 
 app.use("/blogs", blogsController);
 
-app.use(express.static(path.join(__dirname, "../my-app/public", "index.html")));
+app.use(express.static(path.join(__dirname, "my-app", "public")));
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../my-app/public", "index.html"));
+  res.sendFile(path.join(__dirname, "my-app", "public", "index.html"));
 });
 
 app.listen(process.env.PORT, () => {

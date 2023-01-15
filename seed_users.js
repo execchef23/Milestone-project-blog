@@ -12,7 +12,8 @@ mongoose.connect(MONGO_URI, {
 db.User.create([
   {
     username: "Kittens",
-    password: "https://placekitten.com/200/300",
+    password: "2345infs98y",
+    email: "test@gmail.com",
   },
 ])
   .then(() => {
