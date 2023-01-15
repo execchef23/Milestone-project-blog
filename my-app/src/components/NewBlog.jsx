@@ -1,8 +1,11 @@
 import NavBar from "./NavBar";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 
 const NewBlog = () => {
+
+    const navigate = useNavigate()
 
     const [title, setTitle] = useState('')
     console.log('title!!!', title)
@@ -27,6 +30,8 @@ const NewBlog = () => {
 
         const data = await fetch("http://localhost:3001/blogs", requestOptions)
          console.log('time to save blog!!', data)
+
+         navigate('/')
     }
 
     return (
