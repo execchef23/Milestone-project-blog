@@ -28,6 +28,12 @@ function ViewBlogs() {
             <div className="container">
               <Link className="link" to={`/blogs/${blogs._id}`}> {blogs.title}</Link>
               <div className="row">
+              <img
+                  type="url"
+                    src={blogs.image}
+                    className="placeimg"
+                    alt={blogs.title}
+                  />
                 <p> Description: {blogs.description}</p>
               </div>
             </div>
