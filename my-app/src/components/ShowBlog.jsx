@@ -28,6 +28,10 @@ function ViewsShow() {
     getData();
   }, []);
 
+  const editBlog = (id) => {
+    navigate('/edit/'+id)
+  }
+
   const deleteBlog = async () => {
     console.log("Hello from delete click");
     const requestOptions = {
@@ -54,7 +58,7 @@ function ViewsShow() {
         <img className="placeimg2" src={state.image} alt={state.title} />
         <p> Description: {state.description}</p>
         <div className="buttons">
-          <form className="edit" id="btn" method="POST">
+          {/* <form className="edit" id="btn" method="POST">
             <Link
               type="click"
               to={`http://localhost:3001//blogs/${state._id}/edit`}
@@ -62,7 +66,8 @@ function ViewsShow() {
             >
               Edit
             </Link>
-          </form>
+          </form> */}
+          <button onClick={ () => editBlog(id)} className="btn btn-danger">Edit</button>
           <button onClick={deleteBlog} className="btn btn-danger">
             Delete
           </button>
