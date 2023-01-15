@@ -1,6 +1,6 @@
 import NavBar from './NavBar';
 import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 
 const SignUp = () => {
     const [name, SetName] = useState("");

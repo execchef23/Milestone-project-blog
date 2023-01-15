@@ -1,23 +1,16 @@
 import React from "react";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-import Home  from "./components/Home";
+import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import NewBlog from "./components/NewBlog";
-
+import Blogs from "./components/ViewBlogs";
 
 function App() {
-  
-
   return (
-
     <>
-      
-      <body>
-        
-      </body>
       <div>
         <Router>
           <Routes>
@@ -25,6 +18,7 @@ function App() {
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/LogIn" element={<LogIn />} />
             <Route path="/New" element={<NewBlog />} />
+            <Route path="/Blogs" element={<Blogs />} />
           </Routes>
         </Router>
       </div>
