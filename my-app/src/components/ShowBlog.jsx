@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function ViewsShow() {
   let { id } = useParams();
@@ -47,6 +48,7 @@ function ViewsShow() {
 
   return (
     <div>
+      <NavBar />
       <div key={id} className="container">
         <h1>{state.title}</h1>
         <img className="placeimg2" src={state.image} alt={state.title} />
