@@ -46,7 +46,7 @@ const EditBlog = () => {
         const data = await fetch("http://localhost:3001/blogs/"+ id , requestOptions)
         console.log('time to save blog!!', data)
        
-        navigate('/')
+        navigate("/Blogs/:id");
     }
 
     return (
