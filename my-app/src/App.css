@@ -142,6 +142,21 @@
   margin: 0 auto;
 }
 
+/* .blogs-container {
+  border: 2px solid black;
+  padding: 15px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 5em;
+} */
+
+/* 
+.container {
+  width: 50%;
+  float: left;
+  
+} */
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin-left: auto;
