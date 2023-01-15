@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT;
 const blogsController = require("./controllers/blogs_controller");
+const cors = require("cors")
 
 mongoose.set("strictQuery", true);
 //MONGOOSE
@@ -23,6 +24,8 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // Express Settings
+
+app.use(cors())
 
 app.use(express.json());
 
