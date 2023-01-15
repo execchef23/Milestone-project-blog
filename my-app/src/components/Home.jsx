@@ -5,15 +5,12 @@ import "react-bootstrap/Container";
 // import ReactDOM from 'react-dom/client';
 
 const Home = () => {
-
-  return(
-// Form to signup
+    return(
       <>
-  {/* <NavBar /> */}
-      <h1>Blogs here</h1>
-      <ViewBlogs />
+        <NavBar />
+        <ViewBlogs />
       </>
     );
-};
+}; 
 
 export default Home;

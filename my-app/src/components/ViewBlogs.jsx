@@ -25,17 +25,18 @@ function ViewBlogs() {
       {state.map((blogs) => {
         return (
           <div key={blogs._id} className="col-sm-6">
-            <div className="container">
-              <Link className="link" to={`/blogs/${blogs._id}`}> {blogs.title}</Link>
+            <div className="card">
+              <a className="link" href={`/blogs/${blogs._id}`}> {blogs.title}
               <div className="row">
-              <img
+                <img
                   type="url"
-                    src={blogs.image}
-                    className="placeimg"
-                    alt={blogs.title}
-                  />
+                  src={blogs.image}
+                  className="placeimg"
+                  alt={blogs.title}
+                />
                 <p> Description: {blogs.description}</p>
               </div>
+              </a>
             </div>
           </div>
         );
