@@ -1,4 +1,4 @@
-import NavBar from './NavBar';
+// import NavBar from './NavBar';
 import ViewBlogs from './ViewBlogs';
 // import { useState } from 'react';
 import "react-bootstrap/Container";
@@ -9,7 +9,7 @@ const Home = () => {
   return(
 // Form to signup
       <>
-  <NavBar />
+  {/* <NavBar /> */}
       <h1>Blogs here</h1>
       <ViewBlogs />
       </>

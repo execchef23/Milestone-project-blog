@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png"
 
+
 const NavBar = () => {
     return (
         <nav className="main-nav">

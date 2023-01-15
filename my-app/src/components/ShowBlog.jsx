@@ -2,18 +2,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import {Link} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function ViewsShow() {
   let { id } = useParams();
   const navigate = useNavigate();
-  console.log('THIS IS OUR id!~!! beore use effect', id);
+  console.log("THIS IS OUR id!~!! beore use effect", id);
 
   const [state, setState] = useState({});
 
   const getData = async () => {
-    console.log('THi si our id!!!', id)
+    console.log("THi si our id!!!", id);
     // console.log("We got clicked", id);
     const data = await fetch("http://localhost:3001/blogs/" + id);
     // console.log("DATA inital from backed", data);
@@ -22,21 +21,24 @@ function ViewsShow() {
     // console.log("STUFF FROM BACKNED!!", cleanData);
     setState(cleanData);
   };
-//   console.log("State", state);
+  //   console.log("State", state);
 
-useEffect(() => {
+  useEffect(() => {
     getData();
-  },[]);
+  }, []);
 
   const deleteBlog = async () => {
-    console.log('Hello from delete click')
+    console.log("Hello from delete click");
     const requestOptions = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     };
 
     // fetch !!
-    const data = await fetch("http://localhost:3001/blogs/" + id, requestOptions);
+    const data = await fetch(
+      "http://localhost:3001/blogs/" + id,
+      requestOptions
+    );
     // const cleanData = await data.json();
     // setState(cleanData);
     console.log("Data!!! from delte", data);
