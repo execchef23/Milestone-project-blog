@@ -1,6 +1,7 @@
 import NavBar from './NavBar';
+import ViewBlogs from './ViewBlogs';
 import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 
 const Home = () => {
   const [name, SetName] = useState("");
@@ -33,6 +34,7 @@ const Home = () => {
           <input type="submit" />
         </fieldset>
       </form>
+      <ViewBlogs />
       </>
     );
 };
