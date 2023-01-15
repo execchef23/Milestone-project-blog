@@ -28,9 +28,9 @@ const NewBlog = () => {
           };
 
         const data = await fetch("http://localhost:3001/blogs", requestOptions)
-         console.log('time to save blog!!', data)
+        console.log('time to save blog!!', data)
 
-         navigate('/')
+        navigate('/')
     }
 
     return (
@@ -64,7 +64,7 @@ const NewBlog = () => {
                 <input 
                     onClick={submitBlog}
                     className="btn"
-                    value="Submit"
+                    value="Submit Blog"
                 />
             </form>
         </div>

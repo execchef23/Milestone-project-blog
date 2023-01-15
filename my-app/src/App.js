@@ -10,6 +10,7 @@ import NewBlog from "./components/NewBlog";
 import Blog from "./components/ViewBlogs";
 import ShowBlog from "./components/ShowBlog";
 import NavBar from './components/NavBar';
+import EditBlog from "./components/EditBlog";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/New" element={<NewBlog />} />
             <Route path="/Blog" element={<Blog />} />
             <Route path="/Blogs/:id" element={<ShowBlog />} />
+            <Route path="/edit/:id" element={<EditBlog />} />
           </Routes>
         </Router>
       </div>
