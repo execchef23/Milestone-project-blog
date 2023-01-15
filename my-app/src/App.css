@@ -142,3 +142,16 @@
   margin: 0 auto;
 }
 
+.blogs-container {
+  border: 2px solid black;
+  padding: 15px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 5em;
+}
+/* 
+.container {
+  width: 50%;
+  float: left;
+  
+} */
