@@ -8,7 +8,7 @@ function ViewBlogs() {
 
   const getData = async () => {
     // console.log("We got clicked");
-    const data = await fetch("./blogs");
+    const data = await fetch("http://localhost:3001/blogs");
     console.log("DATA inital from backed", data);
     const cleanData = await data.json();
     console.log("STUFF FROM BACKNED!!", cleanData);
@@ -22,15 +22,11 @@ function ViewBlogs() {
 
   return (
     <div className="row col-md-8">
-      <h1>View Blogs</h1>
       {state.map((blogs) => {
         return (
           <div key={blogs._id} className="col-sm-6">
             <div className="container">
-              <Link className="link" to={`/blogs/${blogs._id}`}>
-                {" "}
-                {blogs.title}
-              </Link>
+              <Link className="link" to={`/blogs/${blogs._id}`}> {blogs.title}</Link>
               <div className="row">
                 <p> Description: {blogs.description}</p>
               </div>
