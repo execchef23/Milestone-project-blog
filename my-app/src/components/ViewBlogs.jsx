@@ -28,14 +28,13 @@ function ViewBlogs() {
             <div className="card">
               <a className="link" href={`/blogs/${blogs._id}`}> {blogs.title}
               <div className="row">
-              <img
+                <img
                   type="url"
-                    src={blogs.image}
-                    className="placeimg"
-                    alt={blogs.title}
-                  />
+                  src={blogs.image}
+                  className="placeimg"
+                  alt={blogs.title}
+                />
                 <p> Description: {blogs.description}</p>
-              
               </div>
               </a>
             </div>
