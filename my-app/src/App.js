@@ -9,15 +9,14 @@ import LogIn from "./components/LogIn";
 import NewBlog from "./components/NewBlog";
 import Blog from "./components/ViewBlogs";
 import ShowBlog from "./components/ShowBlog";
-import NavBar from './components/NavBar';
 import EditBlog from "./components/EditBlog";
+
 
 function App() {
   return (
     <>
 
       <div>
-      {/* <NavBar /> */}
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -37,11 +36,17 @@ function App() {
             GitHub,
           </a>{" "}
           <br />
-          Jeremiah Reid <a href="https://github.com/shetara2022">
+          Jeremiah Reid <a href="https://github.com/JeremiahR2002">
             GitHub,
           </a>{" "}
           <br />
-          Michael Manley <a href="https://github.com/execchef23">GitHub</a>
+          Amanda Remo <a href="https://github.com/asremo">
+            GitHub,
+          </a>{" "}
+          <br />
+          Michael Manley <a href="https://github.com/execchef23">
+            GitHub,
+          </a>{" "}
         </h4>
       </footer>
     </>
