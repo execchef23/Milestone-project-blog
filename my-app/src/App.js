@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
 // jsx imports
 import Home from "./components/Home";
 import SignUp from "./components/SignUp";
@@ -10,45 +9,48 @@ import NewBlog from "./components/NewBlog";
 import Blog from "./components/ViewBlogs";
 import ShowBlog from "./components/ShowBlog";
 import EditBlog from "./components/EditBlog";
-
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <>
-
-      <div>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<LogIn />} />
-            <Route path="/new" element={<NewBlog />} />
-            <Route path="/blogs" element={<Blog />} />
-            <Route path="/blogs/:id" element={<ShowBlog />} />
-            <Route path="/edit/:id" element={<EditBlog />} />
-          </Routes>
-        </Router>
-      </div>
-      <footer className="footer">
-        <h4>
-          Site created by: <br />
-          Philip Bowman <a href="https://github.com/AriesRedWar">
-            GitHub,
-          </a>{" "}
-          <br />
-          Jeremiah Reid <a href="https://github.com/JeremiahR2002">
-            GitHub,
-          </a>{" "}
-          <br />
-          Amanda Remo <a href="https://github.com/asremo">
-            GitHub,
-          </a>{" "}
-          <br />
-          Michael Manley <a href="https://github.com/execchef23">
-            GitHub,
-          </a>{" "}
-        </h4>
-      </footer>
+      <main>
+        <div>
+          <Router>
+          <NavBar />
+          <p className="main"></p>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<LogIn />} />
+              <Route path="/new" element={<NewBlog />} />
+              <Route path="/blogs" element={<Blog />} />
+              <Route path="/blogs/:id" element={<ShowBlog />} />
+              <Route path="/edit/:id" element={<EditBlog />} />
+            </Routes>
+          </Router>
+        </div>
+        <footer className="footer">
+          <h3>
+            Site created by: <br />
+            Philip Bowman <a href="https://github.com/AriesRedWar">
+              GitHub,
+            </a>{" "}
+            <br />
+            Jeremiah Reid <a href="https://github.com/JeremiahR2002">
+              GitHub,
+            </a>{" "}
+            <br />
+            Amanda Remo <a href="https://github.com/asremo">
+              GitHub,
+            </a>{" "}
+            <br />
+            Michael Manley <a href="https://github.com/execchef23">
+              GitHub,
+            </a>{" "}
+          </h3>
+        </footer>
+      </main>
     </>
   );
 }

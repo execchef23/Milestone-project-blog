@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
@@ -36,7 +35,6 @@ const NewBlog = () => {
     return (
 
         <div>
-            <NavBar />
             <div className="Form">
             <h2>Add A New Blog: </h2>
             <form >

@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom"
@@ -8,10 +7,10 @@ const EditBlog = () => {
     const navigate = useNavigate()
 
     const {id} = useParams()
-    console.log('This is the id we need to get out of the DB!', id)
+    // console.log('This is the id we need to get out of the DB!', id)
      
         useEffect(()=> {
-            const fetchData = async () => {
+            const getData = async () => {
                 const data = await fetch("http://localhost:3001/blogs/" + id);
                 const jsonData = await data.json();
                 console.log("from db", jsonData);
@@ -19,20 +18,20 @@ const EditBlog = () => {
                 editImage(jsonData.image)
                 editDescription(jsonData.description)
               };
-              fetchData();
+              getData();
         }, [id])
 
     const [title, editTitle] = useState('')
-    console.log('title!!!', title)
+    // console.log('title!!!', title)
 
     const [image, editImage] = useState('')
-    console.log('image!!!', image)
+    // console.log('image!!!', image)
 
     const [description, editDescription] = useState('')
-    console.log('description!!!', description)
+    // console.log('description!!!', description)
 
     const updateBlog = async () => {
-        console.log('We are about to update!!!!!')
+        // console.log('We are about to update!!!!!')
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -42,17 +41,16 @@ const EditBlog = () => {
               description: description
             })
           };
-
-        const data = await fetch("http://localhost:3001/blogs/"+ id , requestOptions)
+        const data = await fetch("http://localhost:3001/blogs/"+ id , requestOptions).then(
+        navigate("/")
+        );
         console.log('time to save blog!!', data)
-       
-        navigate("/Blogs/:id");
+
     }
 
     return (
 
         <div>
-            <NavBar />
             <div className="Form">
             <h2>Edit Blog: </h2>
             <form >
