@@ -1,4 +1,3 @@
-import NavBar from './NavBar';
 import ViewBlogs from './ViewBlogs';
 // import { useState } from 'react';
 import "react-bootstrap/Container";
@@ -7,7 +6,6 @@ import "react-bootstrap/Container";
 const Home = () => {
     return(
       <>
-        <NavBar />
         <ViewBlogs />
       </>
     );
