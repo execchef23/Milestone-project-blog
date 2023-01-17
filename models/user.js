@@ -16,11 +16,11 @@ const userSchema = new mongoose.Schema({
 //   return bcrypt.compareSync(password, this.user.password);
 // };
 
-userSchema.methods.updateUser = function(request, response){
-	this.user.name = request.body.name;
-		 this.user.save();
-	response.redirect('/user');
-};
+// userSchema.methods.updateUser = function(request, response){
+// 	this.user.name = request.body.name;
+// 		 this.user.save();
+// 	response.redirect('/user');
+// };
 
 // let user = new user ({
 //   name: req.body.name,
