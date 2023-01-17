@@ -8,9 +8,9 @@ function ViewBlogs() {
 
   const getData = async () => {
     // console.log("We got clicked");
-    const data = await fetch("http://localhost:3001/blogs");
+    const data = await fetch();
     // console.log("DATA inital from backed", data);
-    const cleanData = await data.json();
+    const cleanData = await data.json("http://localhost:3001/blogs");
     // console.log("STUFF FROM BACKNED!!", cleanData);
     setState(cleanData);
   };
