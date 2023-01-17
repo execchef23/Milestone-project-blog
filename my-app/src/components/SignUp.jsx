@@ -7,10 +7,10 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const [username, SetUsername] = useState("");
-        console.log('User', username)
+        // console.log('User', username)
 
     const [password, SetPassword] = useState("");
-        console.log('password', password)
+        // console.log('password', password)
 
     const Registering = async () => {
         console.log('We are registering!')
