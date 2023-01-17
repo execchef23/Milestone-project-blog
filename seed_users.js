@@ -13,7 +13,6 @@ db.User.create([
   {
     username: "Kittens",
     password: "2345infs98y",
-    email: "test@gmail.com",
   },
 ])
   .then(() => {
