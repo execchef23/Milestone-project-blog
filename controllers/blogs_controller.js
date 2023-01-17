@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Blog = require('../models/blogs')
-
+const User = require('../models/user')
 //Index/Get Route
 router.get('/', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /blogs !!!')
@@ -78,5 +78,17 @@ router.get('/', (req, res) => {
         res.render("error404");
       });
   });
+
+  router.post('/', (req, res) => {
+    console.log("are you working? New blog", req.params.id, req.body)
+    User.create(req.body)
+      .then((foundUser) => {
+        res.json(foundUser)
+      })
+      .catch(err => {
+        console.log(err)
+        res.render('error404')
+      })
+  })
 
 module.exports = router;

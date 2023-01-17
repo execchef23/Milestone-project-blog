@@ -23,7 +23,7 @@ const SignUp = () => {
             })
         };
         
-        const data = await fetch("http://localhost:3001/users", requestOptions)
+        const data = await fetch("http://localhost:3001/user", requestOptions)
         console.log('its time to save it!', data)
 
         navigate('/')
@@ -43,7 +43,6 @@ const SignUp = () => {
                 <form>
                     <label>Username: </label>
                     <input 
-                        type="username"
                         id="username"
                         name="username"
                         onChange={(e)=> {SetUsername(e.target.value)}}
@@ -51,7 +50,6 @@ const SignUp = () => {
                     />
                     <label>Password: </label>
                     <input 
-                        type="password"
                         id="password"
                         name="password"
                         onChange={(e)=> {SetPassword(e.target.value)}}
