@@ -15,7 +15,7 @@ router.get('/user', (req, res) => {
   })
 
 router.post('/user', (req, res) => {
-    console.log("are you working? New User", req.params.id, req.body)
+    console.log("Are you even working bro? New User", req.params.id, req.body)
     User.create(req.body)
       .then((foundUser) => {
         res.json(foundUser)
