@@ -1,10 +1,14 @@
 // Modules and Globals
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const path = require('path');
-const PORT = process.env.PORT || 3001;
+const path = require("path");
+const PORT = process.env.PORT;
+const blogsController = require("./controllers/blogs_controller");
+const cors = require("cors")
 
+mongoose.set("strictQuery", true);
 //MONGOOSE
 const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(
@@ -14,24 +18,25 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
   () => {
-    console.log(`connected to mongo: ${MONGO_URI}`)
+    console.log(`connected to mongo: ${MONGO_URI}`);
   }
-)
+);
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// Express Settings
 
-// Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(cors());
 
-// Handle GET requests to /api route
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
+app.use(express.json());
+
+app.use("/blogs", blogsController);
+
+app.use(express.static(path.join(__dirname, "my-app", "public")));
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "my-app", "public", "index.html"));
 });
 
-
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on`, PORT);
 });
-  
-  app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
-  });

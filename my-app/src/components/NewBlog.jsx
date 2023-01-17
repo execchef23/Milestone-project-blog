@@ -1,12 +1,40 @@
-import NavBar from "./NavBar";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 const NewBlog = () => {
+
+    const navigate = useNavigate()
+
+    const [title, setTitle] = useState('')
+    console.log('title!!!', title)
+
+    const [image, setImage] = useState('')
+    console.log('image!!!', image)
+
+    const [description, setDescription] = useState('')
+    console.log('description!!!', description)
+
+    const submitBlog = async () => {
+        console.log('We are about to save!!!!!')
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              title: title,
+              image: image,
+              description: description
+            })
+          };
+
+        const data = await fetch("http://localhost:3001/blogs", requestOptions)
+        console.log('time to save blog!!', data)
+
+        navigate('/')
+    }
 
     return (
 
         <div>
-            <NavBar />
             <div className="Form">
             <h2>Add A New Blog: </h2>
             <form >
@@ -15,22 +43,26 @@ const NewBlog = () => {
                     id="title"
                     name="title"
                     required
+                    onChange={(e)=> {setTitle(e.target.value)}}
                 />
                 <label>Image URL (optional): </label>
                 <input 
                     type="url"
                     id="image"
                     name="image"
+                    onChange={(e)=> {setImage(e.target.value)}}
                 />
                 <label>Description: </label>
                 <textarea
                     id="description"
                     name="description" 
                     required
+                    onChange={(e)=> {setDescription(e.target.value)}}
                 />
                 <input 
+                    onClick={submitBlog}
                     className="btn"
-                    value="Submit"
+                    value="Submit Blog"
                 />
             </form>
         </div>

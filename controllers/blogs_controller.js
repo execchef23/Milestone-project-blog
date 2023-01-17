@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Game = require('../models/blogs')
+const Blog = require('../models/blogs')
 
 //Index/Get Route
 router.get('/', (req, res) => {
@@ -68,7 +68,7 @@ router.get('/', (req, res) => {
   
   //Delete Route
   router.delete("/:id", (req, res) => {
-    console.log(' DELETE ROUTE!!!! WE SMACKED THE GET ROUTER /games:id !!!')
+    console.log(' DELETE ROUTE!!!! WE SMACKED THE GET ROUTER /blogs:id !!!')
     Blog.findByIdAndDelete(req.params.id)
       .then(() => {
         res.send("Delete was successful");
