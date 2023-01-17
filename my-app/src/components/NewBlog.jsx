@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
@@ -28,15 +27,14 @@ const NewBlog = () => {
           };
 
         const data = await fetch("http://localhost:3001/blogs", requestOptions)
-         console.log('time to save blog!!', data)
+        console.log('time to save blog!!', data)
 
-         navigate('/')
+        navigate('/')
     }
 
     return (
 
         <div>
-            <NavBar />
             <div className="Form">
             <h2>Add A New Blog: </h2>
             <form >
@@ -64,7 +62,7 @@ const NewBlog = () => {
                 <input 
                     onClick={submitBlog}
                     className="btn"
-                    value="Submit"
+                    value="Submit Blog"
                 />
             </form>
         </div>

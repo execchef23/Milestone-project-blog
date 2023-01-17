@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "react-bootstrap/Container";
 
 function ViewBlogs() {
@@ -26,16 +26,17 @@ function ViewBlogs() {
         return (
           <div key={blogs._id} className="col-sm-6">
             <div className="card">
-              <a className="link" href={`/blogs/${blogs._id}`}> {blogs.title}
-              <div className="row">
-                <img
-                  type="url"
-                  src={blogs.image}
-                  className="placeimg"
-                  alt={blogs.title}
-                />
-                <p> Description: {blogs.description}</p>
-              </div>
+              <a className="link" href={`/blogs/${blogs._id}`}>
+                <p>{blogs.title}</p>
+                <div className="row">
+                  <img
+                    type="url"
+                    src={blogs.image}
+                    className="placeimg"
+                    alt={blogs.title}
+                  />
+                  <p>{blogs.description}</p>
+                </div>
               </a>
             </div>
           </div>

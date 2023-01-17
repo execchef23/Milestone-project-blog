@@ -68,7 +68,7 @@ router.get('/', (req, res) => {
   
   //Delete Route
   router.delete("/:id", (req, res) => {
-    console.log(' DELETE ROUTE!!!! WE SMACKED THE GET ROUTER /games:id !!!')
+    console.log(' DELETE ROUTE!!!! WE SMACKED THE GET ROUTER /blogs:id !!!')
     Blog.findByIdAndDelete(req.params.id)
       .then(() => {
         res.send("Delete was successful");

@@ -6,3 +6,4 @@ Backend - Node, Express (node),
 Frontend - React 
 
 Database - Mongo with Mongoose
+
