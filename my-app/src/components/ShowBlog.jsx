@@ -37,17 +37,18 @@ function ViewsShow() {
     const requestOptions = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-    };
-
+    }
+    navigate("/")
+    
     // fetch !!
     const data = await fetch(
       "http://localhost:3001/blogs/" + id,
       requestOptions
     );
     const cleanData = await data.json();
-    setState(cleanData);
+    setState(cleanData)
     // console.log("Data!!! from delte", data);
-    navigate("/");
+
   };
 
   return (
