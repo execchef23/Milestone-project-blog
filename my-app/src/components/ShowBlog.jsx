@@ -45,7 +45,7 @@ function ViewsShow() {
     const cleanData = await data.json();
     setState(cleanData);
     // console.log("Data!!! from delte", data);
-    navigate("/");
+    navigate("/blogs");
   };
 
   return (
@@ -58,7 +58,7 @@ function ViewsShow() {
           {/* <form className="edit" id="btn" method="POST">
             <Link
               type="click"
-              to={`http://localhost:3001//blogs/${state._id}/edit`}
+              to={`http://localhost:3001//blogs/${state.id}/edit`}
               className="btn btn-warning"
             >
               Edit

@@ -5,8 +5,8 @@ const User = require('../models/user')
 router.get('/user', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /Users !!!')
     User.find()
-      .then(foundUsers => {
-        res.json(foundUsers)    //res.render
+      .then(foundUser => {
+        res.json(foundUser)    //res.render
       })
       .catch(err => {
         console.log(err)
