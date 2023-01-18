@@ -1,10 +1,12 @@
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import NavBar from './NavBar';
+import { Component } from "react";
+
 
 const LogIn = () => {
 
     return(
+        
+
+
 
         <div>
             <div className="Form">
