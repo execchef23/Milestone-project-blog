@@ -16,8 +16,8 @@ router.get('/blogs', (req, res) => {
       })
   })
   
-  router.get('/blogs:id', (req, res) => {
-    console.log('WE SMACKED THE GET ROUTER /blogs/:id', req.params)
+  router.get('/blogs/:id', (req, res) => {
+    console.log('WE SMACKED THE GET ROUTER /blogs + id', req.params)
     Blog.findById(req.params.id)
       .then(foundBlogs => {
         res.json(foundBlogs)
@@ -28,7 +28,7 @@ router.get('/blogs', (req, res) => {
       })
   })
   
-  router.get("/blogs:id/edit", (req, res) => {
+  router.get("/blogs/:id/edit", (req, res) => {
     Blog.find()
       .then((foundBlogs) => {
         res.json(foundBlogs);
@@ -40,8 +40,8 @@ router.get('/blogs', (req, res) => {
   });
   
   //Put/Patch Route
-  router.put("/blogs:id", (req, res) => {
-    console.log("are you working?", req.params.id, req.body)
+  router.put("/blogs/:id", (req, res) => {
+    console.log("are you even working bro?", req.params.id, req.body)
     Blog.findByIdAndUpdate(req.params.id, req.body)
       .then((foundBlogs) => {
         console.log(foundBlogs)
@@ -55,7 +55,7 @@ router.get('/blogs', (req, res) => {
   
   //Post Route
   router.post('/blogs', (req, res) => {
-    console.log("are you working? New blog", req.params.id, req.body)
+    console.log("are you even working bro? New blog", req.params.id, req.body)
     Blog.create(req.body)
       .then((foundBlogs) => {
         res.json(foundBlogs)
@@ -68,7 +68,7 @@ router.get('/blogs', (req, res) => {
   
   
   //Delete Route
-  router.delete("/blogs:id", (req, res) => {
+  router.delete("/blogs/:id", (req, res) => {
     console.log(' DELETE ROUTE!!!! WE SMACKED THE GET ROUTER /blogs:id !!!')
     Blog.findByIdAndDelete(req.params.id)
       .then(() => {
