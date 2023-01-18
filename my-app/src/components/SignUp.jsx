@@ -37,7 +37,6 @@ const SignUp = () => {
     return(
 
         <div>
-            <NavBar />
             <div className="Form">
                 <h2>Sign Up</h2>
                 <form>
