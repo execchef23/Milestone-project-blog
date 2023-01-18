@@ -45,7 +45,7 @@ function ViewsShow() {
     const cleanData = await data.json();
     setState(cleanData);
     // console.log("Data!!! from delte", data);
-    navigate("/blogs");
+    navigate("/");
   };
 
   return (
