@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const Blog = require('../models/blogs')
-const User = require('../models/user')
+
+
 //Index/Get Route
-router.get('/', (req, res) => {
+router.get('/blogs', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /blogs !!!')
     Blog.find()
       .then(foundBlogs => {
@@ -15,8 +16,8 @@ router.get('/', (req, res) => {
       })
   })
   
-  router.get('/:id', (req, res) => {
-    console.log('WE SMACKED THE GET ROUTER /blogs/:id', req.params)
+  router.get('/blogs/:id', (req, res) => {
+    console.log('WE SMACKED THE GET ROUTER /blogs + id', req.params)
     Blog.findById(req.params.id)
       .then(foundBlogs => {
         res.json(foundBlogs)
@@ -27,7 +28,7 @@ router.get('/', (req, res) => {
       })
   })
   
-  router.get("/:id/edit", (req, res) => {
+  router.get("/blogs/:id/edit", (req, res) => {
     Blog.find()
       .then((foundBlogs) => {
         res.json(foundBlogs);
@@ -39,7 +40,7 @@ router.get('/', (req, res) => {
   });
   
   //Put/Patch Route
-  router.put("/:id", (req, res) => {
+  router.put("/blogs/:id", (req, res) => {
     console.log("are you working?", req.params.id, req.body)
     Blog.findByIdAndUpdate(req.params.id, req.body)
       .then((foundBlogs) => {
@@ -53,7 +54,7 @@ router.get('/', (req, res) => {
   });
   
   //Post Route
-  router.post('/', (req, res) => {
+  router.post('/blogs', (req, res) => {
     console.log("are you working? New blog", req.params.id, req.body)
     Blog.create(req.body)
       .then((foundBlogs) => {
@@ -67,7 +68,7 @@ router.get('/', (req, res) => {
   
   
   //Delete Route
-  router.delete("/:id", (req, res) => {
+  router.delete("/blogs/:id", (req, res) => {
     console.log(' DELETE ROUTE!!!! WE SMACKED THE GET ROUTER /blogs:id !!!')
     Blog.findByIdAndDelete(req.params.id)
       .then(() => {
@@ -79,16 +80,6 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.post('/', (req, res) => {
-    console.log("are you working? New blog", req.params.id, req.body)
-    User.create(req.body)
-      .then((foundUser) => {
-        res.json(foundUser)
-      })
-      .catch(err => {
-        console.log(err)
-        res.render('error404')
-      })
-  })
+
 
 module.exports = router;
