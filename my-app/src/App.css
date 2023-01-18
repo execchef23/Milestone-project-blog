@@ -160,3 +160,11 @@ main {
   margin: 5px;
   font-size: 15px;
 }
+
+.error404 {
+  text-align: center;
+}
+
+.error-pic {
+  width: 500px;
+}
