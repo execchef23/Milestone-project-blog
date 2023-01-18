@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
+import ShowComments from "./ShowComments";
+import NewComment from "./NewComment";
 
 function ViewsShow() {
   const { id } = useParams();
@@ -50,20 +52,25 @@ function ViewsShow() {
 
   return (
     <div>
-      <div key={id} className="container">
-        <h1>{state.title}</h1>
+      <div key={id} className="blog-container">
+        <div className="blog-details">
+          <h1>{state.title}</h1>
         <img className="placeimg2" src={state.image} alt={state.title} />
-        <p> {state.description}</p>
+        <h3> {state.description} </h3>
+        <hr />
+        </div>
+        <h2>
+          Comments:
+        </h2>
+        <div className="row">
+          < ShowComments />
+        </div>
+        <br />
+        <hr />
+        <h2>Want to submit a comment?</h2>
+        <NewComment />
+        <hr />
         <div className="buttons">
-          {/* <form className="edit" id="btn" method="POST">
-            <Link
-              type="click"
-              to={`http://localhost:3001//blogs/${state._id}/edit`}
-              className="btn btn-warning"
-            >
-              Edit
-            </Link>
-          </form> */}
           <button onClick={() => editBlog(id)} className="btn btn-danger">
             Edit
           </button>
