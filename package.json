@@ -21,6 +21,6 @@
     "build": "cd client && npm install && npm run build"
   },
   "engines": {
-    "node": "your-node-version"
+    "node": "18.x"
   }
 }

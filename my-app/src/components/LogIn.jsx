@@ -1,17 +1,16 @@
-import { Component } from "react";
 
 
 const LogIn = () => {
 
     return(
-        
-
-
+    
+    
 
         <div>
             <div className="Form">
                 <h2>Log In</h2>
-                <form>
+                <form action="/login" method="post">
+
                     <label>Username: </label>
                     <input 
                         id="username"
