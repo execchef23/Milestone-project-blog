@@ -10,6 +10,7 @@ import Blog from "./components/ViewBlogs";
 import ShowBlog from "./components/ShowBlog";
 import EditBlog from "./components/EditBlog";
 import NavBar from './components/NavBar';
+import Error404 from "./components/Error404";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blogs/:id" element={<ShowBlog />} />
               <Route path="/edit/:id" element={<EditBlog />} />
+              <Route path="*" element={<Error404 />} />
             </Routes>
           </Router>
         </div>

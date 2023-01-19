@@ -3,6 +3,7 @@ const router = express.Router()
 const Blog = require('../models/blogs')
 
 
+
 //Index/Get Route
 router.get('/blogs', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /blogs !!!')
