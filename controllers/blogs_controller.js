@@ -56,7 +56,7 @@ router.get('/blogs', (req, res) => {
   
   //Post Route
   router.post('/blogs', (req, res) => {
-    console.log("are you even working bro? New blog", req.params.id, req.body)
+    console.log("are you even working bro? New blog", req.body)
     Blog.create(req.body)
       .then((foundBlogs) => {
         res.json(foundBlogs)
