@@ -43,3 +43,17 @@ app.get("/", function (req, res) {
 app.listen(process.env.PORT, () => {
   console.log(`Server listening on`, PORT);
 });
+
+// LOG IN!
+// const loginschema=new mongoose.Schema({
+//   name:{
+//     type:String,
+//     required:true
+//   },
+//   password:{
+//     type:String,
+//     required:true
+//   }
+// })
+
+// const collection=new mongoose.model
