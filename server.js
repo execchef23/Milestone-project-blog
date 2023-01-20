@@ -9,19 +9,11 @@ const blogsController = require("./controllers/blogs_controller");
 const userController = require("./controllers/User_controller");
 const authController = require("./controllers/auth_controller")
 const cors = require("cors")
-const passport = require("passport")
 const bodyParser = require("body-parser")
-const LocalStrategy = require("passport-local")
 
-passportLocalMongoose =
-    require("passport-local-mongoose"),
-User = require("./models/user2");
+// User = require("./models/user");
 
 
-// mongoose.set('useNewUrlParser', true);
-// mongoose.set('useFindAndModify', false);
-// mongoose.set('useCreateIndex', true);
-// mongoose.set('useUnifiedTopology', true);
 mongoose.set("strictQuery", true);
 //MONGOOSE
 const MONGO_URI = process.env.MONGO_URI;
@@ -45,9 +37,9 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/", blogsController);
+app.use("/blogs", blogsController);
 
-app.use("/", userController);
+app.use("/user", userController);
 
 app.use("/auth", authController);
 
@@ -60,17 +52,3 @@ app.get("/", function (req, res) {
 app.listen(process.env.PORT, () => {
   console.log(`Server listening on`, PORT);
 });
-
-// LOG IN!
-// const loginschema=new mongoose.Schema({
-//   name:{
-//     type:String,
-//     required:true
-//   },
-//   password:{
-//     type:String,
-//     required:true
-//   }
-// })
-
-// const collection=new mongoose.model

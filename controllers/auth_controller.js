@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../models/user')
-const bcrypt = require('bcrypt')
+// const User = require('../models/user')
+// const bcrypt = require('bcrypt')
 
 router.get('/', async (req, res) => {
     // Get the username from the req.body
