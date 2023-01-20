@@ -8,7 +8,19 @@ const PORT = process.env.PORT;
 const blogsController = require("./controllers/blogs_controller");
 const userController = require("./controllers/User_controller");
 const cors = require("cors")
+const passport = require("passport")
+const bodyParser = require("body-parser")
+const LocalStrategy = require("passport-local")
 
+passportLocalMongoose =
+    require("passport-local-mongoose"),
+User = require("./models/user2");
+
+
+// mongoose.set('useNewUrlParser', true);
+// mongoose.set('useFindAndModify', false);
+// mongoose.set('useCreateIndex', true);
+// mongoose.set('useUnifiedTopology', true);
 mongoose.set("strictQuery", true);
 //MONGOOSE
 const MONGO_URI = process.env.MONGO_URI;
@@ -25,6 +37,8 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // Express Settings
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 

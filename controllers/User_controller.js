@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../models/user')
+const User = require('../models/user2')
+const bcrypt = require ("bcrypt")
+const { response } = require('express')
 
 router.get('/user', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /Users !!!')
@@ -14,16 +16,17 @@ router.get('/user', (req, res) => {
       })
   })
 
-router.post('/user', (req, res) => {
+router.post('/user',async (req, res) => {
     console.log("Are you even working bro? New User", req.body)
-    User.create(req.body)
-      .then((foundUser) => {
-        res.json(foundUser)
-      })
-      .catch(err => {
-        console.log(err)
-        res.render('error404')
-      })
+    const {password,...rest}=req.body
+    const passwordhash=await bcrypt.hash(password,12)
+    const user = {...rest, password: passwordhash}
+    try{
+      const foundUser = await User.create(user)
+      res.status(200).json(foundUser)
+    }catch(e){
+      res.status(404).json({message:"error attempting to create a user"})
+    }
   })
   
   router.get('/', async (req, res) => {
