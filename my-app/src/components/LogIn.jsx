@@ -1,5 +1,3 @@
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
 import { useState, useContext } from 'react'
 import { CurrentUserContext } from '../contexts/CurrentUser';
 import { useNavigate } from 'react-router-dom';
@@ -32,11 +30,12 @@ const LogIn = () => {
     }
 
     return(
-
+    
         <div>
             <div className="Form">
                 <h2>Log In</h2>
-                <form>
+                <form action="/login" method="get">
+
                     <label>Username: </label>
                     <input 
                         id="username"

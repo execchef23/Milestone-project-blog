@@ -8,7 +8,7 @@ const SignUp = () => {
     const [username, SetUsername] = useState("");
         // console.log('User', username)
 
-    const [password, SetPassword] = useState("");
+    const [hash_password, SetPassword] = useState("");
         // console.log('password', password)
 
     const Registering = async () => {
@@ -18,7 +18,7 @@ const SignUp = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 username: username,
-                password: password,
+                password: hash_password,
             })
         };
         
