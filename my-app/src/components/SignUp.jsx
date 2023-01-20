@@ -1,4 +1,3 @@
-import NavBar from './NavBar';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 // import ReactDOM from 'react-dom/client';
