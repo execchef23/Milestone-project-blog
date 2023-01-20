@@ -7,6 +7,7 @@ const path = require("path");
 const PORT = process.env.PORT;
 const blogsController = require("./controllers/blogs_controller");
 const userController = require("./controllers/User_controller");
+const authController = require("./controllers/auth_controller")
 const cors = require("cors")
 const passport = require("passport")
 const bodyParser = require("body-parser")
@@ -47,6 +48,8 @@ app.use(express.json());
 app.use("/", blogsController);
 
 app.use("/", userController);
+
+app.use("/auth", authController);
 
 app.use(express.static(path.join(__dirname, "my-app", "public")));
 
