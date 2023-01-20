@@ -1,13 +1,19 @@
 // import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
-import { useState } from "react";
+import { useState, useContext} from "react";
+import { CurrentUserContext } from "../contexts/CurrentUser";
+import { useNavigate } from "react-router-dom";
+
 
 const LogIn = () => {
+    const navigate = useNavigate();
 
     const [credentials, setCredentials] = useState({
         username: "",
         password: ""
     })
+
+    const {setCurrentUser} = useContext(CurrentUserContext)
 
     async function handleSubmit (e){
         e.preventDefault()
@@ -22,6 +28,9 @@ const LogIn = () => {
         if (response.status===200){
             const {user, token}=data
             localStorage.setItem("token", token)
+            setCurrentUser(user)
+            navigate('/')
+
         }
     }
 
