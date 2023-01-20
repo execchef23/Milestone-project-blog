@@ -7,9 +7,11 @@ function CurrentUserContextProvider ({children}) {
     const [currentUser, setCurrentUser] = useState(null)
     useEffect(() => {
         const getLoggedInUser = async () => {
-            let response = await fetch ("", {})
+            let response = await fetch("", {})
             // TODO fill out the rest of authorization
+        
         }
+
 
     }, [])
 
@@ -20,4 +22,5 @@ function CurrentUserContextProvider ({children}) {
     )
 }
 
-export default CurrentUserContextProvider
+
+export default CurrentUserContextProvider;
