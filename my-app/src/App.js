@@ -10,10 +10,12 @@ import Blog from "./components/ViewBlogs";
 import ShowBlog from "./components/ShowBlog";
 import EditBlog from "./components/EditBlog";
 import NavBar from './components/NavBar';
+import Error404 from "./components/Error404";
+import CurrentUserContextProvider from "./contexts/CurrentUser";
 
 function App() {
   return (
-    <>
+    <CurrentUserContextProvider>
       <main>
         <div>
           <Router>
@@ -24,9 +26,10 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LogIn />} />
               <Route path="/new" element={<NewBlog />} />
-              <Route path="/blogs" element={<Blog />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/blogs/:id" element={<ShowBlog />} />
               <Route path="/edit/:id" element={<EditBlog />} />
+              <Route path="*" element={<Error404 />} />
             </Routes>
           </Router>
         </div>
@@ -51,7 +54,7 @@ function App() {
           </h3>
         </footer>
       </main>
-    </>
+    </CurrentUserContextProvider>
   );
 }
 
