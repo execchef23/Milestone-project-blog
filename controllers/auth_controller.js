@@ -15,9 +15,9 @@ const jwt = require('json-web-token')
 router.post('/', async (req, res) => {
     console.log('Inside authorization', req.body)
     
-    let user = await User.find({ username: req.body.username })
+    let user = await User.findOne({ username: req.body.username })
     console.log(user)
-    console.log(user.methods.verifyPassword(req.body.password))
+    // console.log(user.methods.verifyPassword(req.body.password))
     if (!user || !await bcrypt.compare(req.body.password, user.password)) {
         console.log('Could not find user or password did not work')
         res.status(404).json({ 
