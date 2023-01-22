@@ -7,7 +7,7 @@ const path = require("path");
 const PORT = process.env.PORT;
 const blogsController = require("./controllers/blogs_controller");
 const userController = require("./controllers/User_controller");
-const authController = require("./controllers/auth_controller")
+const authController = require("./controllers/auth_controller");
 const cors = require("cors")
 const bodyParser = require("body-parser")
 

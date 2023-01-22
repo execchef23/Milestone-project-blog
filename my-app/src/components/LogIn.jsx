@@ -24,6 +24,7 @@ const LogIn = () => {
       const { user, token } = data;
       localStorage.setItem("token", token);
       setCurrentUser(user);
+      console.log(data.token)
       navigate("/");
     }
   }
@@ -32,12 +33,13 @@ const LogIn = () => {
     <div>
       <div className="Form">
         <h2>Log In</h2>
-        <form action="/login" method="get">
+        <form onSubmit={handleSubmit}>
           <label>Username: </label>
           <input
             id="username"
             name="username"
             required
+            value={credentials.username}
             onChange={(e) =>
               setCredentials({
                 ...credentials,
@@ -51,6 +53,7 @@ const LogIn = () => {
             name="password"
             required
             type="password"
+            value={credentials.password}
             onChange={(e) =>
               setCredentials({
                 ...credentials,
@@ -58,7 +61,7 @@ const LogIn = () => {
               })
             }
           />
-          <input onClick={LogIn} className="btn" value="Log In" />
+          <input className="btn btn-primary" type="submit" value="Login" />
         </form>
       </div>
     </div>
