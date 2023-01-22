@@ -53,12 +53,6 @@ Lists the technologies used to build the application.
 
 Addresses any outstanding bugs or unfinished functionality.
 
-### Built With
-
-
-* [![React][React.js]][React-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +75,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/AriesRedWar/NC-State-Group-Project-M2
+   git clone https://github.com/JeremiahR2002/Milestone-Project-3
    ```
 2. Install NPM packages
    ```sh
