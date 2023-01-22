@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
-  user: {type: String, default: 'Anonymous'},
+  username: {type: String, ref: "username"},
   content: { type: String, default: ''}
 });
 
