@@ -14,8 +14,12 @@ const NavBar = () => {
 
 
   const loginDetail = currentUser ? (
-    <>{currentUser.username} <button type= "button" onClick={handleLogout}>logout</button></>
-  ) : (
+    <>
+    <Link to="/new" className="new-blog nav-link">
+            New Blog
+    </Link>
+    Logged in as: {currentUser.username} <button className="btn" type= "button" onClick={handleLogout}>Log Out</button></>
+    ) : (
     <>
       <Link to="/SignUp" className="sign-up nav-link">
         Sign Up
@@ -38,10 +42,7 @@ const NavBar = () => {
           <Link to="/" className="home nav-link">
             Home
           </Link>
-          <Link to="/new" className="new-blog nav-link">
-            New Blog
-          </Link>
-          {loginDetail}
+          <div className="nav-link">{loginDetail}</div>
         </div>
         {/* <div>
           <form action="/action_page.php">
