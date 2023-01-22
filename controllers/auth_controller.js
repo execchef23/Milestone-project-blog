@@ -5,17 +5,6 @@ const bcrypt = require('bcrypt')
 const jwt = require('json-web-token')
 
 
-// router.get('/', async (req, res) => {
-//     User.find()
-//     .then((foundUser) => {
-//       res.json(foundUser); //res.render
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.json("error404");
-//     });
-// })
-
 router.post('/', async (req, res) => {
     console.log('Inside authorization', req.body)
     let user = await User.findOne({ username: req.body.username })
@@ -33,7 +22,6 @@ router.post('/', async (req, res) => {
         res.json({ user: user, token: result.value })                                       
     }
 })
-
 
 router.get('/profile', async (req, res) => {
     try {
