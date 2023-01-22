@@ -84,6 +84,20 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- How to use Websit -->
+## How to
+
+First you create a username and password.
+
+Then you log in to the site.
+
+Then you can create a blog by entering a title.
+
+Then adding a link to a picture.
+
+Then a comment about the topic.
+
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
