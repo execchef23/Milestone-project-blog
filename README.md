@@ -100,6 +100,9 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Refrences to Sites used. 
+https://www.w3schools.com/ was the main source of information.
+
 Backend - Node, Express (node), 
 
 Frontend - React 
