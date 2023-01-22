@@ -34,15 +34,14 @@ const NavBar = () => {
             <img src={logo} alt="Blog Central logo" />
           </Link>
         </div>
-
         <div className="nav-links">
           <Link to="/" className="home nav-link">
             Home
           </Link>
-          {loginDetail}
           <Link to="/new" className="new-blog nav-link">
             New Blog
           </Link>
+          {loginDetail}
         </div>
         {/* <div>
           <form action="/action_page.php">
