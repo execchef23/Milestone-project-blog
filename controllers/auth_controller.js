@@ -5,16 +5,16 @@ const bcrypt = require('bcrypt')
 const jwt = require('json-web-token')
 
 
-router.get('/', async (req, res) => {
-    User.find()
-    .then((foundUser) => {
-      res.json(foundUser); //res.render
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json("error404");
-    });
-})
+// router.get('/', async (req, res) => {
+//     User.find()
+//     .then((foundUser) => {
+//       res.json(foundUser); //res.render
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.json("error404");
+//     });
+// })
 
 router.post('/', async (req, res) => {
     console.log('Inside authorization', req.body)
