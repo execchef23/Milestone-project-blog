@@ -114,6 +114,9 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Issues
+The main issue we were left with was being able to record the relationships of the intial comment and other user comments.
+
 Backend - Node, Express (node), 
 
 Frontend - React 
