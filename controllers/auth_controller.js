@@ -4,20 +4,23 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('json-web-token')
 
-// router.get('/', async (req, res) => {
-    // Get the username from the req.body
-    // Look up user in mongo based upon the username.
-    // if user
-    // and bcrypt compare is true then return a user and the token
-// })
 
+router.get('/', async (req, res) => {
+    User.find()
+    .then((foundUser) => {
+      res.json(foundUser); //res.render
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json("error404");
+    });
+})
 
 router.post('/', async (req, res) => {
     console.log('Inside authorization', req.body)
     
-    let user = await User.find({ username: req.body.username })
+    let user = await User.findOne({ username: req.body.username })
     console.log(user)
-    console.log(user.methods.verifyPassword(req.body.password))
     if (!user || !await bcrypt.compare(req.body.password, user.password)) {
         console.log('Could not find user or password did not work')
         res.status(404).json({ 
@@ -49,14 +52,13 @@ router.get('/profile', async (req, res) => {
 
             // Find the user object using their id:
             let user = await User.findOne({
-                where: {
-                    userId: id
-                }
+                _id:id
             })
-            res.json(user)
+            console.log(user)
+            res.status(200).json(user)
         }
     } catch {
-        res.json(null)
+        res.status(404).json(null)
     }
 })
 

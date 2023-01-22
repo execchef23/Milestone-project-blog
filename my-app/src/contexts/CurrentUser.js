@@ -7,11 +7,8 @@ export const CurrentUserContext = createContext()
 //     useEffect(() => {
 //         const getLoggedInUser = async () => {
 //             let response = await fetch("", {})
-//             // TODO fill out the rest of authorization
-        
+//             // TODO fill out the rest of authorization 
 //         }
-
-
 //     }, [])
 
 function CurrentUserContextProvider ({children}) {
