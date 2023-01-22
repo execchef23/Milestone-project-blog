@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
   router.get('/:id', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /blogs + id', req.params)
     Blog.findById(req.params.id)
-    // .populate('comments')
+      .populate('comments')
       .then(foundBlogs => {
         res.json(foundBlogs)
       })
@@ -82,6 +82,40 @@ router.get('/', (req, res) => {
       });
   });
 
+
+  router.post('/:id/comment', (req, res) => {
+    console.log(req.body)
+    Blog.findById(req.params.id)
+    .then(foundBlogs => {
+        Comment.create(req.body)
+        .then(comment => {
+            foundBlogs.comments.push(comment.id)
+            foundBlogs.save()
+            .then(() => {
+                res.redirect(`/blogs/${req.params.id}`)
+            })
+        })
+        .catch(err => {
+            res.render('error404')
+        })
+    })
+    .catch(err => {
+        res.render('error404')
+    })
+})
+
+
+
+router.delete('/:id/comment/:commentId', (req, res) => {
+    Comment.findByIdAndDelete(req.params.commentId)
+        .then(() => {
+            res.redirect(`/places/${req.params.id}`)
+        })
+        .catch(err => {
+            console.log('err', err)
+            res.render('error404')
+        })
+})
 
 
 module.exports = router;

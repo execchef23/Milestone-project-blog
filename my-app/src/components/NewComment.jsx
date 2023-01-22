@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const NewComment = (onSubmit) => {
+
+    const navigate = useNavigate()
 
     const [comment, setComment] = useState({
         content: ''
@@ -16,8 +19,7 @@ const NewComment = (onSubmit) => {
 
 
     return (
-        // <form onSubmit={handleSubmit}>
-        <form onSubmit={handleSubmit}>
+        <form>
             <div className="row">
                 <div className="form-group col-sm-12">
                     {/* <label htmlFor="content">Content</label> */}
