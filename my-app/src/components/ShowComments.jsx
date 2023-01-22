@@ -1,5 +1,7 @@
 // import { useContext } from "react";
 
+// import { comments } from "../../../models";
+
 const ShowComments = () => {
 //     // const { currentUser } = useContext(CurrentUser)
 
@@ -12,9 +14,9 @@ const ShowComments = () => {
 //     //         </button>
 //     //     )
 //     // }
-
     return (
-        <h3> Testing </h3>
+        <h3> Comments </h3>
+        // {comments}
 //         // <div className="border col-sm-4">
 //         //     <h2 className="rant">{comment.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
 //         //     <h4>{comment.content}</h4>
@@ -24,6 +26,7 @@ const ShowComments = () => {
 //         //     <h4>Rating: {comment.stars}</h4>
 //         //     {deleteButton}
 //         // </div>
+
     )
 }
 
