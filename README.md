@@ -4,19 +4,19 @@
 We created a general blogging website where you can post about anything you would to talk about.
 
 ## General Requirements: All Project Types
-This project cannot be part of a lab or assignment we've already done in class.
+The project cannot be part of a lab or assignment we've already done in class.
 
-This project is group by default (no more than 4 people per group), but can be done individually if approved by instructor.
+The project is group by default (no more than 4 people per group), but can be done individually if approved by instructor.
 
-This project should feature user authentication (i.e., secure logins and passwords).
+The project should feature user authentication (i.e., secure logins and passwords).
 
 Effort must be spent on styling, appearance, and user experience.
 
-This app must be tracked in GitHub, with a minimum of 25 commits.
+The app must be tracked in GitHub, with a minimum of 25 commits.
 
 Ideally, put your empty project up on GitHub on day one of development, and aim for multiple commits per day.
 
-This app must be deployed somewhere.
+The app must be deployed somewhere.
 
 The app should have a README.md file including what is referenced below in the application requirements.
 
