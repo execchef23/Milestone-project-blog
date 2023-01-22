@@ -114,8 +114,15 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
 ## Issues
 The main issue we were left with was being able to record the relationships of the intial comment and other user comments.
+
+## Refrences to Sites used. 
+https://www.w3schools.com/ was the main source of information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 Backend - Node, Express (node), 
 

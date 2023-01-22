@@ -1,26 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const jwt = require('json-web-token')
 
 
-// router.get('/', async (req, res) => {
-//     User.find()
-//     .then((foundUser) => {
-//       res.json(foundUser); //res.render
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.json("error404");
-//     });
-// })
-
 router.post('/', async (req, res) => {
     console.log('Inside authorization', req.body)
-    
     let user = await User.findOne({ username: req.body.username })
     console.log(user)
+
     if (!user || !await bcrypt.compare(req.body.password, user.password)) {
         console.log('Could not find user or password did not work')
         res.status(404).json({ 
@@ -33,7 +22,6 @@ router.post('/', async (req, res) => {
         res.json({ user: user, token: result.value })                                       
     }
 })
-
 
 router.get('/profile', async (req, res) => {
     try {
