@@ -22,8 +22,7 @@
     "react-bootstrap": "^2.7.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "cd client && npm install && npm run build"
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=0.7.0 <18.15.0"
