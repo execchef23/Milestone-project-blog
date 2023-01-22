@@ -1,7 +1,31 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import { CurrentUserContext } from "../contexts/CurrentUser";
+import { useContext } from "react";
 
 const NavBar = () => {
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+  function handleLogout(e){
+    e.preventDefault()
+    setCurrentUser(null)
+    localStorage.removeItem("token")
+    window.location.reload()
+  }
+
+
+  const loginDetail = currentUser ? (
+    <>{currentUser.username} <button type= "button" onClick={handleLogout}>logout</button></>
+  ) : (
+    <>
+      <Link to="/SignUp" className="sign-up nav-link">
+        Sign Up
+      </Link>
+      <Link to="/login" className="log-in nav-link">
+        Log In
+      </Link>
+    </>
+  );
+
   return (
     <nav className="main-nav">
       <div className="nav-container">
@@ -15,12 +39,7 @@ const NavBar = () => {
           <Link to="/" className="home nav-link">
             Home
           </Link>
-          <Link to="/SignUp" className="sign-up nav-link">
-            Sign Up
-          </Link>
-          <Link to="/login" className="log-in nav-link">
-            Log In
-          </Link>
+          {loginDetail}
           <Link to="/new" className="new-blog nav-link">
             New Blog
           </Link>
