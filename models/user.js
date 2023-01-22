@@ -1,8 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-// const bcrypt = require('bcrypt-nodejs');
 const bcrypt = require('bcrypt')
-
 
 
 const userSchema = new mongoose.Schema({
@@ -19,8 +17,6 @@ userSchema.methods.generateHash = function(password) {
 userSchema.methods.verifyPassword = function(password) {
   return bcrypt.compareSync(password, this.user.password);
 };
-
-// 
 
 userSchema.methods.updateUser = function(request, response){
 	this.user.name = request.body.name;
