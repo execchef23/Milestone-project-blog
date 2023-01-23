@@ -11,7 +11,7 @@ mongoose.connect(MONGO_URI, {
 
 db.comments.create([
     {
-      username: 'amanda',
+      username: 'Jeremiah',
       content: "This cat is adorable!!!",
 
     },
