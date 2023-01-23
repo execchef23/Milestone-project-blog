@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
   router.get('/:id', (req, res) => {
     console.log('WE SMACKED THE GET ROUTER /blogs + id', req.params)
     Blog.findById(req.params.id)
-      .populate('comments')
+      // .populate('comments')
       .then(foundBlogs => {
         res.json(foundBlogs)
       })
