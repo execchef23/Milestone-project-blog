@@ -44,9 +44,9 @@ const ShowComments = () => {
     
     return ( 
         <div>
-            {comment}
+            {/* {comment} */}
             {/* <h4>{comment.content}</h4> */}
-            {deleteButton}
+            {/* {deleteButton} */}
         </div> 
     )
  }
