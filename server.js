@@ -43,10 +43,10 @@ app.use("/user", userController);
 
 app.use("/auth", authController);
 
-app.use(express.static(path.join(__dirname, "my-app", "public")));
+app.use(express.static(path.join(__dirname, "my-app", 'build')));
 
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "my-app", "public", "index.html"));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "my-app", 'build', 'index.html'));
 });
 
 app.listen(process.env.PORT, () => {

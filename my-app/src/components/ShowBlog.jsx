@@ -63,14 +63,6 @@ function ViewsShow() {
         <h2>
           Comments:
         </h2>
-        <div className="row">
-          < ShowComments />
-        </div>
-        <br />
-        <hr />
-        <h2>Want to submit a comment?</h2>
-        <NewComment />
-        <hr />
         <div className="buttons">
           <button onClick={() => editBlog(id)} className="btn btn-danger">
             Edit
