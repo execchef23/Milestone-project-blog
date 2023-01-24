@@ -26,7 +26,7 @@ function ViewBlogs() {
         return (
           <div key={blogs._id} className="col-sm-6">
             <div className="card">
-              <a className="link" href={`games/${blogs._id}`}>
+              <a className="link" href={`/${blogs._id}`}>
                 <p>{blogs.title}</p>
                 <div className="row">
                   <img
