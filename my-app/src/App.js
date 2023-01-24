@@ -13,6 +13,7 @@ import NavBar from './components/NavBar';
 import Error404 from "./components/Error404";
 import CurrentUserContextProvider from "./contexts/CurrentUser";
 
+
 function App() {
   return (
     <CurrentUserContextProvider>
@@ -27,8 +28,8 @@ function App() {
               <Route path="/login" element={<LogIn />} />
               <Route path="/new" element={<NewBlog />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<ShowBlog />} />
-              <Route path="/edit/:id" element={<EditBlog />} />
+              <Route path="/games/:id" element={<ShowBlog />} />
+              <Route path="/games/:id/edit" element={<EditBlog />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </Router>
