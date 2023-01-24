@@ -28,8 +28,8 @@ function App() {
               <Route path="/login" element={<LogIn />} />
               <Route path="/new" element={<NewBlog />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/games/:id" element={<ShowBlog />} />
-              <Route path="/games/:id/edit" element={<EditBlog />} />
+              <Route path="/:id" element={<ShowBlog />} />
+              <Route path="/edit/:id" element={<EditBlog />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </Router>
