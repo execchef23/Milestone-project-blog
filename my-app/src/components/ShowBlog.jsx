@@ -7,26 +7,33 @@ import ShowComments from "./ShowComments";
 import NewComment from "./NewComment";
 
 function ViewsShow() {
-  const { id } = useParams();
+
   const navigate = useNavigate();
-  //   console.log("THIS IS OUR id!~!! beore use effect", id);
 
-  const [state, setState] = useState({});
+  const { id } = useParams();
 
-  const getData = async () => {
-    // console.log("This is our id!!!", id);
-    // console.log("We got clicked", id);
-    const data = await fetch("http://localhost:3001/blogs/" + id);
-    // console.log("DATA inital from backed", data);
-    const cleanData = await data.json();
-    // console.log("STUFF FROM BACKNED!!", cleanData);
-    setState(cleanData);
-  };
-    // console.log("State", state);
+    useEffect(()=> {
+      const getData = async () => {
+          const data = await fetch("http://localhost:3001/blogs/" + id);
+          const jsonData = await data.json();
+          console.log("from db", jsonData);
+          editTitle(jsonData.title)
+          editImage(jsonData.image)
+          editDescription(jsonData.description)
+        };
+        getData();
+  }, [id])
 
-  useEffect(() => {
-    getData();
-  }, []);
+
+  const [title, editTitle] = useState('')
+  // console.log('title!!!', title)
+
+  const [image, editImage] = useState('')
+  // console.log('image!!!', image)
+
+  const [description, editDescription] = useState('')
+  // console.log('description!!!', description)
+
 
   const editBlog = (id) => {
     navigate("/edit/" + id);
@@ -45,9 +52,7 @@ function ViewsShow() {
       "http://localhost:3001/blogs/" + id,
       requestOptions
     );
-    const cleanData = await data.json();
-    setState(cleanData)
-    // console.log("Data!!! from delte", data);
+     // console.log("Data!!! from delte", data);
 
   };
 
@@ -55,9 +60,9 @@ function ViewsShow() {
     <div>
       <div key={id} className="blog-container">
         <div className="blog-details">
-          <h1>{state.title}</h1>
-        <img className="placeimg2" src={state.image} alt={state.title} />
-        <h3> {state.description} </h3>
+          <h1>{title}</h1>
+        <img className="placeimg2" src={image} alt={title} />
+        <h3> {description} </h3>
         <hr />
         </div>
         <h2>
