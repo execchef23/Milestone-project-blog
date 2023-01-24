@@ -46,13 +46,7 @@ function ViewsShow() {
       headers: { "Content-Type": "application/json" },
     }
     navigate("/")
-    
-    // fetch !!
-    const data = await fetch(
-      "http://localhost:3001/blogs/" + id,
-      requestOptions
-    );
-     // console.log("Data!!! from delte", data);
+
 
   };
 
