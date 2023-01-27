@@ -11,7 +11,7 @@ const EditBlog = () => {
      
         useEffect(()=> {
             const getData = async () => {
-                const data = await fetch("http://localhost:3001/blogs/" + id);
+                const data = await fetch("/blogs/" + id);
                 const jsonData = await data.json();
                 console.log("from db", jsonData);
                 editTitle(jsonData.title)
@@ -41,7 +41,7 @@ const EditBlog = () => {
               description: description
             })
           };
-        const data = await fetch("http://localhost:3001/blogs/"+ id , requestOptions).then(
+        const data = await fetch("/blogs/"+ id , requestOptions).then(
         navigate("/")
         );
         console.log('time to save blog!!', data)
