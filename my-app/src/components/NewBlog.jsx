@@ -26,7 +26,7 @@ const NewBlog = () => {
             })
           };
 
-        const data = await fetch("http://localhost:3001/blogs", requestOptions)
+        const data = await fetch("/blogs", requestOptions)
         console.log('time to save blog!!', data)
 
         navigate('/')
