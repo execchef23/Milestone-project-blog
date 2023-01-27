@@ -22,7 +22,7 @@ const SignUp = () => {
       }),
     };
 
-    const data = await fetch("/user", requestOptions);
+    const data = await fetch("http://localhost:3001/user", requestOptions);
     console.log("its time to save it!", data);
 
     navigate("/");
