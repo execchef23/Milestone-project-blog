@@ -1,3 +1,4 @@
+// addins
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -11,7 +12,9 @@ import ShowBlog from "./components/ShowBlog";
 import EditBlog from "./components/EditBlog";
 import NavBar from './components/NavBar';
 import Error404 from "./components/Error404";
+// context imports
 import CurrentUserContextProvider from "./contexts/CurrentUser";
+
 
 
 function App() {

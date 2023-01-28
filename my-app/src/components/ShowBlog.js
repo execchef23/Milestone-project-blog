@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
-import ShowComments from "./ShowComments";
-import NewComment from "./NewComment";
+// import ShowComments from "./ShowComments";
+// import NewComment from "./NewComment";
 
 function ViewsShow() {
 
@@ -40,15 +40,19 @@ function ViewsShow() {
   };
 
   const deleteBlog = async () => {
-    // console.log("Hello from delete click");
+    console.log("Hello from delete click");
     const requestOptions = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     }
-    navigate("/")
+      // fetch !!
+      const data = await fetch("/blogs/" + id, requestOptions);
+      // const cleanData = await data.json();
+      // setState(cleanData);
+      console.log("Data!!! from delte", data);
+      navigate("/blog");
+    };
 
-
-  };
 
   return (
     <div>

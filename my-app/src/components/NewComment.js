@@ -17,9 +17,11 @@ const NewComment = (onSubmit) => {
         })
     }
 
+    navigate("/");
+
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="row">
                 <div className="form-group col-sm-12">
                     {/* <label htmlFor="content">Content</label> */}
