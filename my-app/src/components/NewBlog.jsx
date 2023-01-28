@@ -6,13 +6,13 @@ const NewBlog = () => {
     const navigate = useNavigate()
 
     const [title, setTitle] = useState('')
-    console.log('title!!!', title)
+    // console.log('title!!!', title)
 
     const [image, setImage] = useState('')
-    console.log('image!!!', image)
+    // console.log('image!!!', image)
 
     const [description, setDescription] = useState('')
-    console.log('description!!!', description)
+    // console.log('description!!!', description)
 
     const submitBlog = async () => {
         console.log('We are about to save!!!!!')
