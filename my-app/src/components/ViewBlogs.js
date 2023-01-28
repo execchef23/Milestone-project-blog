@@ -7,7 +7,6 @@ function ViewBlogs() {
   const [state, setState] = useState([]);
 
   const getData = async () => {
-    // console.log("We got clicked");
     const data = await fetch("/blogs");
     // console.log("DATA inital from backed", data);
     const cleanData = await data.json();
